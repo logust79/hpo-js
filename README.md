@@ -10,7 +10,7 @@ Example:
 ```javascript
 import * as React from "react";
 import "./App.css";
-import Hpo from "./components/Hpo";
+import Hpo from "hpo-js";
 
 class App extends React.Component {
   public render() {
