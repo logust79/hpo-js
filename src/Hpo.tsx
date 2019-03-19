@@ -1,7 +1,9 @@
-// @flow
 import * as React from "react";
 import axios from "axios";
 import Graph from "react-graph-vis";
+import ReactLoading from "react-loading";
+import Conditional from "./Conditional";
+
 import {
   HpoProps,
   HpoState,
@@ -31,7 +33,7 @@ const defaultNode = {
   size: 8
 };
 
-export default class HGF extends React.Component<HpoProps, HpoState> {
+export default class Hpo extends React.Component<HpoProps, HpoState> {
   static defaultProps = {
     visOption: defaultVisOption,
     visEvent: {}
@@ -49,7 +51,6 @@ export default class HGF extends React.Component<HpoProps, HpoState> {
     // it contains the 'nodes' part and the 'edges' part
     const { hpoNodes } = this.props;
     // the only useful attributes are MOI_score and hgf score
-    console.log(hpoGraph);
     const nodes: HpoNode[] = hpoGraph.map((node: GraphNode) => {
       const hpoNode = hpoNodes.find(ele => ele.id === node.id) || {
         shape: defaultNode.shape,
@@ -120,17 +121,21 @@ export default class HGF extends React.Component<HpoProps, HpoState> {
     }
   }
   render() {
-    const { dot } = this.state;
-    console.log(dot);
+    const { dot, hpoNames } = this.state;
     return (
-      <div className="HGF">
-        <Graph
-          graph={dot}
-          options={this.props.visOption}
-          events={this.props.visEvent}
-          style={{ height: "640px" }}
-        />
-      </div>
+      <React.Fragment>
+        <Conditional if={Object.entries(hpoNames).length === 0}>
+          <ReactLoading type="spin" color="#666" />
+        </Conditional>
+        <Conditional if={Object.entries(hpoNames).length > 0}>
+          <Graph
+            graph={dot}
+            options={this.props.visOption}
+            events={this.props.visEvent}
+            style={{ height: "640px" }}
+          />
+        </Conditional>
+      </React.Fragment>
     );
   }
 }

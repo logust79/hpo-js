@@ -51,9 +51,9 @@ export interface Edge {
 export interface HpoProps {
   minGraphUrl: string;
   hpoNameUrl: string;
-  visOption: VisOption; //optional
+  visOption?: VisOption; //optional
   hpoNodes: HpoNode[];
-  visEvent: { [key: string]: (e: React.MouseEvent<HTMLElement>) => void };
+  visEvent?: { [key: string]: (e: React.MouseEvent<HTMLElement>) => void };
 }
 
 export interface Dot {

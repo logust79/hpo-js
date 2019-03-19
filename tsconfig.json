@@ -4,9 +4,9 @@
     "outDir": "lib",
     "module": "esnext",
     "target": "es5",
+    "declaration": true,
     "lib": ["es6", "dom"],
     "sourceMap": true,
-    "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
@@ -17,7 +17,9 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "typeRoots": ["index.d.ts", "node_modules/@types", "@types"]
   },
-  "exclude": ["node_modules", "lib"]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
+  "exclude": ["node_modules", "src/index.tsx"]
 }

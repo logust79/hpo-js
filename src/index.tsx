@@ -1,16 +1,6 @@
-## hpo-js
-
-A React Typescript component to help visualise the Human Phenotype Ontology structure.
-
-This is a simple wrap-around of `react-graph-vis`.
-It relies on an API server to feed data structure such as https://github.com/logust79/hpo-js-server.
-
-Example:
-
-```javascript
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Hpo from "hpo-js";
+import Hpo from "./Hpo";
 
 ReactDOM.render(
   <Hpo
@@ -39,4 +29,3 @@ ReactDOM.render(
   />,
   document.getElementById("root") as HTMLElement
 );
-```

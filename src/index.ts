@@ -1,1 +1,2 @@
-export * from "./Hpo";
+import Hpo from "./Hpo";
+export default Hpo;
