@@ -1,5 +1,6 @@
 ## hpo-js
 
+![alt text](https://raw.githubusercontent.com/logust79/hpo-js/master/demo.png)
 A React Typescript component to help visualise the Human Phenotype Ontology structure.
 
 This is a simple wrap-around of `react-graph-vis`.
