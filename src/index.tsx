@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Hpo from "./Hpo";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Hpo
@@ -8,8 +9,16 @@ ReactDOM.render(
     hpoNodes={[
       {
         id: "HP:0007754",
-        color: "red",
-        size: 20
+        color: {
+          border: "red",
+          background: "yellow",
+          highlight: "steelblue",
+          hover: {
+            background: "pink",
+            border: "pink"
+          }
+        },
+        size: 30
       },
       {
         id: "HP:0000510",
@@ -26,6 +35,10 @@ ReactDOM.render(
     minGraphUrl="https://sheltered-river-63671.herokuapp.com/hpoMinGraph/"
     // hpoNameUrl is an API to get HPO names given HPO ids.
     hpoNameUrl="https://sheltered-river-63671.herokuapp.com/hpoNames/"
+    visOption={{
+      interaction: { hover: true }
+    }}
   />,
   document.getElementById("root") as HTMLElement
 );
+serviceWorker.unregister();

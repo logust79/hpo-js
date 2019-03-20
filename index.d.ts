@@ -2,16 +2,14 @@ import * as React from "react";
 
 // determining vis structure, and default node shape/size/colour
 interface VisOption {
-  layout: {
-    hierarchical: {
-      enabled: boolean;
-      direction: string;
-      sortMethod: string;
-    };
-  };
-  edges: {
-    color: string;
-  };
+  layout?: any;
+  edges?: any;
+  interaction?: any;
+  groups?: any;
+  configure?: any;
+  manipulation?: any;
+  physics?: any;
+  nodes?: any;
 }
 export interface GraphNode {
   id: string;
@@ -45,7 +43,7 @@ export interface HpoNode {
 }
 
 export interface Edge {
-  from: string;
+  from: string | null;
   to: string;
 }
 export interface HpoProps {
