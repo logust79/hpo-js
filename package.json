@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "start": "rm -f src/index.ts && react-scripts start",
-    "build": "cp src/index.ts.copy src/index.ts && rm -rf ./lib && tsc",
+    "build": "cp src/index.ts.copy src/index.ts && cp tsconfig.json.copy tsconfig.json && rm -rf ./lib && tsc",
     "prepare": "yarn build"
   },
   "devDependencies": {

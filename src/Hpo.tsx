@@ -85,7 +85,6 @@ export default class Hpo extends React.Component<HpoProps, HpoState> {
   };
 
   componentDidMount() {
-    console.log("awefwef");
     if (this.props.visOption) {
       this.props.visOption.layout =
         this.props.visOption.layout || defaultVisOption.layout;
@@ -93,7 +92,7 @@ export default class Hpo extends React.Component<HpoProps, HpoState> {
     // get dot
     const { hpoNodes, minGraphUrl } = this.props;
     // get min graph
-    const hpoList = hpoNodes.map((node: any) => node.id).join(",");
+    const hpoList = hpoNodes.map((node: HpoNode) => node.id).join(",");
 
     axios
       .get(minGraphUrl + hpoList)
@@ -111,7 +110,7 @@ export default class Hpo extends React.Component<HpoProps, HpoState> {
     // get node labels
     const { hpoNodes, hpoNameUrl } = this.props;
     if (Object.entries(this.state.hpoNames).length === 0) {
-      const hpoList = hpoNodes.map((node: any) => node.id).join(",");
+      const hpoList = hpoNodes.map((node: HpoNode) => node.id).join(",");
       axios.get(hpoNameUrl + hpoList).then(res => {
         this.setState({
           dot: {
