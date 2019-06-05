@@ -1,6 +1,6 @@
 {
   "name": "hpo-js",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "main": "lib/index.js",
   "types": "index.d.ts",
   "repository": {
