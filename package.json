@@ -15,6 +15,9 @@
     "react-graph-vis": "^1.0.2",
     "react-loading": "^2.0.3"
   },
+  "scripts": {
+    "build": "rm -rf ./lib && tsc"
+  },
   "files": [
     "lib/**/*",
     "index.d.ts"
