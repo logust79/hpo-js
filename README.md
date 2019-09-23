@@ -35,9 +35,9 @@ ReactDOM.render(
       }
     ]}
     // minGraphUrl is an API to get minified node-edge structure given hpoNodes
-    minGraphUrl="https://sheltered-river-63671.herokuapp.com/hpoMinGraph/"
+    minGraphUrl="https://phenogenon-api.phenopolis.org/hpoMinGraph/"
     // hpoNameUrl is an API to get HPO names given HPO ids.
-    hpoNameUrl="https://sheltered-river-63671.herokuapp.com/hpoNames/"
+    hpoNameUrl="https://phenogenon-api.phenopolis.org/hpoNames/"
   />,
   document.getElementById("root") as HTMLElement
 );
