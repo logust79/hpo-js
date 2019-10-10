@@ -126,6 +126,7 @@ export default class Hpo extends React.Component<HpoProps, HpoState> {
   }
   render() {
     const { dot, hpoNames } = this.state;
+    const { height = 640 } = this.props;
     return (
       <React.Fragment>
         <Conditional if={Object.entries(hpoNames).length === 0}>
@@ -136,7 +137,7 @@ export default class Hpo extends React.Component<HpoProps, HpoState> {
             graph={dot}
             options={this.props.visOption}
             events={this.props.visEvent}
-            style={{ height: "640px" }}
+            style={{ height: `${height}px` }}
           />
         </Conditional>
       </React.Fragment>

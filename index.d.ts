@@ -47,6 +47,7 @@ export interface Edge {
   to: string;
 }
 export interface HpoProps {
+  height?: number;
   minGraphUrl: string;
   hpoNameUrl: string;
   visOption?: VisOption; //optional
